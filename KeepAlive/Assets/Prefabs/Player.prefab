@@ -229,5 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f9fa3a4378bd247a0d09242c034fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  torchDeathEvent: {fileID: 11400000, guid: 45a58a086e0b46a4eacdba6a27e1abcc, type: 2}
   health: 100
   baseDeclineRatePerSecond: 1
