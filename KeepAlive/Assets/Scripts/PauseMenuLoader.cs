@@ -22,4 +22,9 @@ public class PauseMenuLoader : MonoBehaviour
             pauseReadyToInvoke = true;
         }
     }
+
+    public bool GetIsPauseUILoaded()
+    {
+        return pauseReadyToInvoke;
+    }
 }
