@@ -2,8 +2,8 @@
 Ludem Dare 46 - Team Project
 
 Made by:
-	Jake
-	Jordan
-	Rebecca
-	Ben
-	Harvey
+	Jake,
+	Jordan,
+	Rebecca,
+	Ben,
+	Harvey,
