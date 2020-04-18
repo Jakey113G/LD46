@@ -31755,7 +31755,7 @@ GameObject:
   - component: {fileID: 608764844}
   - component: {fileID: 608764846}
   m_Layer: 0
-  m_Name: PauseMenuLoader
+  m_Name: UILoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31768,7 +31768,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608764843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2db861945deb7fb4abb5fe29dfdf7f68, type: 3}
   m_Name: 
@@ -31799,7 +31799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b561e0ca99de3f41bd21d51c0eedb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuScene: AdditivePauseMenu
+  UIScenes:
+  - SceneName: AdditivePauseMenu
+    IsLoaded: 0
 --- !u!1 &1392551337
 GameObject:
   m_ObjectHideFlags: 0
