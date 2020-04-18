@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  public float speed;
+  public float Speed;
 
   private Rigidbody2D playerRigidbody;
 
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     Vector2 moveVelocity = new Vector2(moveHorizontal, moveVertical);
 
     if(moveVelocity.magnitude > 1.0f) moveVelocity = moveVelocity.normalized;
-    moveVelocity *= speed;
+    moveVelocity *= Speed;
 
     Vector2 velocityChange = moveVelocity - playerRigidbody.velocity;
 
