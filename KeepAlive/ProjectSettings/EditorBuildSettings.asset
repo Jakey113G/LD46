@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/World.unity
     guid: 70e4df3a38ebabf408170c4449090db0
   - enabled: 1
-    path: Assets/Scenes/Cave_01.unity
-    guid: 228e2a48400fc9e4caad1020b33f8058
+    path: Assets/Scenes/SurvivorSplash.unity
+    guid: cd03270afe0e0384ca0e640f9601994f
+  - enabled: 1
+    path: Assets/Scenes/GameOverSplash.unity
+    guid: 0b13a94c2a825044b867308ad4db0e6e
   m_configObjects: {}
