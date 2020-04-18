@@ -2,8 +2,13 @@
 
 public class GameManager : IGameManager
 {
-    public GameManager()
+    public void Start()
     {
-        Debug.Log( "Works!" );
+        Debug.Log( "game start" );
+    }
+
+    public void GameOver()
+    {
+        Debug.Log( "game over" );
     }
 }

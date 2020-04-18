@@ -6,6 +6,6 @@ public class ProjectInstaller : ScriptableObjectInstaller<ProjectInstaller>
 {
     public override void InstallBindings()
     {
-        Container.Bind<IGameManager>().To<GameManager>().AsSingle().NonLazy();
+        Container.Bind<IGameManager>().To<GameManager>().AsSingle();
     }
 }
