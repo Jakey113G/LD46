@@ -15,6 +15,9 @@ public class CaveEntrance : CollideActivator
     {
         base.Interact( playerGameObject );
 
-        cave.Enter( playerGameObject, entranceIdentifier );
+        if ( cave != null )
+        {
+            cave.Enter( playerGameObject, entranceIdentifier );
+        }
     }
 }

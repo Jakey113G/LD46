@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class Cave : MonoBehaviour
 {
-    [SerializeField] private CaveEntrance[] entrances;
+    private CaveEntrance[] entrances;
+
+    private void Awake()
+    {
+        entrances = GetComponentsInChildren<CaveEntrance>( true );
+    }
 
     public void Enter( GameObject playerGameObject, string entranceIdentifier )
     {
