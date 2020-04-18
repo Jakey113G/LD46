@@ -13,10 +13,12 @@ public class CollideActivator : MonoBehaviour
     {
         if ( canContinueToExist == false && canConsume == true )
         {
+            Debug.Log("Trigger was consumed by " + playerTagName);
             Destroy( gameObject );
         }
         else if (playerGameObject != null && Input.GetKeyDown( KeyCode.Space ) )
         {
+            Debug.Log("Trigger was triggered by " + playerTagName);
             Interact( playerGameObject );
             canContinueToExist = false;
         }
@@ -26,7 +28,7 @@ public class CollideActivator : MonoBehaviour
     {
         if ( other.CompareTag( playerTagName ) )
         {
-            Debug.Log( "Trigger was activated by " + playerTagName );
+            Debug.Log( "Trigger was entered by " + playerTagName );
             playerGameObject = other.gameObject;
         }
     }
@@ -35,7 +37,7 @@ public class CollideActivator : MonoBehaviour
     {
         if ( other.CompareTag( playerTagName ) )
         {
-            Debug.Log( "Trigger was deactivated by " + playerTagName );
+            Debug.Log( "Trigger was left by " + playerTagName );
             playerGameObject = null;
         }
     }
