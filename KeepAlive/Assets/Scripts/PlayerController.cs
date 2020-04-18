@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     float moveHorizontal = Input.GetAxis("Horizontal");
     float moveVertical = Input.GetAxis("Vertical");
 
-    Vector2 movementForce = new Vector2(moveHorizontal, moveVertical) * speed;    
+    Vector2 movementForce = new Vector2(moveHorizontal, moveVertical) * speed;
 
-    playerRigidbody.MovePosition(playerRigidbody.position + movementForce * Time.deltaTime);
+    playerRigidbody.MovePosition(playerRigidbody.position + movementForce * Time.fixedDeltaTime);
   }
 }
