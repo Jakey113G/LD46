@@ -24,7 +24,10 @@ public class PlayerController : MonoBehaviour
     Vector2 moveVelocity = new Vector2(moveHorizontal, moveVertical);
 
     if(moveVelocity.magnitude > 1.0f) moveVelocity = moveVelocity.normalized;
+    moveVelocity *= speed;
 
-    playerRigidbody.velocity = moveVelocity * speed;
+    Vector2 velocityChange = moveVelocity - playerRigidbody.velocity;
+
+    playerRigidbody.velocity += velocityChange * 0.8f;
   }
 }
