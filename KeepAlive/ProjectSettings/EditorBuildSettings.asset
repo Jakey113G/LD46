@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SplashMenu.unity
     guid: c52327c7833caa44e9d998b7cbc68dd3
   - enabled: 1
+    path: Assets/Scenes/AdditivePauseMenu.unity
+    guid: 47904ad694145cc4c9f15d82f2993eb4
+  - enabled: 1
     path: Assets/Scenes/World.unity
     guid: 70e4df3a38ebabf408170c4449090db0
   - enabled: 1
