@@ -5,23 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SplashOptions : MonoBehaviour
 {
-    public string SceneToStartOn;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    [SerializeField]
+    private string sceneToStartOn;
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync(SceneToStartOn, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(sceneToStartOn, LoadSceneMode.Single);
     }
 
     public void QuitApp()
