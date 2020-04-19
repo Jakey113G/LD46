@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
 
     private string previousAnimationTrigger = "Idle";
+    private float originalXScale;
 
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        
+
+        originalXScale = transform.localScale.x;
     }
 
     private void FixedUpdate()
@@ -43,11 +45,25 @@ public class PlayerController : MonoBehaviour
         {
             previousAnimationTrigger = animationTrigger;
             playerAnimator.SetTrigger( previousAnimationTrigger );
+
+            transform.localScale = new Vector3( animationTrigger == "WalkLeft" ? originalXScale : -originalXScale, transform.localScale.y, transform.localScale.z );
         }
     }
 
     private string GetAnimationTrigger()
     {
-        return playerRigidbody.velocity.magnitude <= 0.1f ? "Idle" : "WalkFront";
+        Vector2 velocity = playerRigidbody.velocity;
+
+        if ( velocity.magnitude <= 0.2f )
+        {
+            return "Idle";
+        }
+
+        if ( Mathf.Abs( velocity.x ) > 0.2 )
+        {
+            return velocity.x > 0 ? "WalkRight" : "WalkLeft";
+        }
+
+        return velocity.y > 0.2 ? "WalkBack" : "WalkFront";
     }
 }
