@@ -54697,6 +54697,11 @@ PrefabInstance:
       propertyPath: cave
       value: 
       objectReference: {fileID: 4135757}
+    - target: {fileID: 3637477160882753646, guid: a54d95103c7703548ba599fd77b5dcdd,
+        type: 3}
+      propertyPath: uiMessage
+      value: Press "space" to exit  cave
+      objectReference: {fileID: 0}
     - target: {fileID: 3637477160882753647, guid: a54d95103c7703548ba599fd77b5dcdd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54893,6 +54898,11 @@ PrefabInstance:
       propertyPath: cave
       value: 
       objectReference: {fileID: 4135757}
+    - target: {fileID: 3637477160882753646, guid: a54d95103c7703548ba599fd77b5dcdd,
+        type: 3}
+      propertyPath: uiMessage
+      value: Press "space" to exit cave
+      objectReference: {fileID: 0}
     - target: {fileID: 3637477160882753647, guid: a54d95103c7703548ba599fd77b5dcdd,
         type: 3}
       propertyPath: m_LocalPosition.x
