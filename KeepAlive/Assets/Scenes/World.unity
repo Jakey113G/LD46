@@ -213,6 +213,108 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &604957860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2584986698294136913, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: cave
+      value: 
+      objectReference: {fileID: 1333850709}
+    - target: {fileID: 2584986698294136913, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: entranceIdentifier
+      value: MineEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584986698294136919, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_Name
+      value: MineExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717248, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454577499091717262, guid: 14b996476a59deec690df2f2f750e745,
+        type: 3}
+      propertyPath: m_Name
+      value: Cave_Mine_Map
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14b996476a59deec690df2f2f750e745, type: 3}
+--- !u!1 &604957861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3454577499091717262, guid: 14b996476a59deec690df2f2f750e745,
+    type: 3}
+  m_PrefabInstance: {fileID: 604957860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &604957862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604957861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6aa50fc446dd54c9f9882be73ce1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &608764843
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +372,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1580234188327419057, guid: b7669c5e5f9cf4cb5910c847beafab27,
+        type: 3}
+      propertyPath: m_Name
+      value: MineEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580234188327419063, guid: b7669c5e5f9cf4cb5910c847beafab27,
+        type: 3}
+      propertyPath: cave
+      value: 
+      objectReference: {fileID: 604957862}
+    - target: {fileID: 3637477161015201824, guid: b7669c5e5f9cf4cb5910c847beafab27,
+        type: 3}
+      propertyPath: m_Name
+      value: MountainExit
+      objectReference: {fileID: 0}
     - target: {fileID: 3637477161015201830, guid: b7669c5e5f9cf4cb5910c847beafab27,
         type: 3}
       propertyPath: cave
@@ -280,10 +397,20 @@ PrefabInstance:
       propertyPath: cave
       value: 
       objectReference: {fileID: 1319730167}
+    - target: {fileID: 3637477161325715556, guid: b7669c5e5f9cf4cb5910c847beafab27,
+        type: 3}
+      propertyPath: m_Name
+      value: MountainEntrance
+      objectReference: {fileID: 0}
     - target: {fileID: 8223348590109037000, guid: b7669c5e5f9cf4cb5910c847beafab27,
         type: 3}
       propertyPath: m_Name
       value: IslandMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223348590109037000, guid: b7669c5e5f9cf4cb5910c847beafab27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8223348590109037002, guid: b7669c5e5f9cf4cb5910c847beafab27,
         type: 3}
