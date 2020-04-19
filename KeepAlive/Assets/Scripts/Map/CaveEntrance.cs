@@ -13,8 +13,6 @@ public class CaveEntrance : CollideActivator
 
     protected override void Interact( GameObject playerGameObject )
     {
-        base.Interact( playerGameObject );
-
         if ( cave != null )
         {
             cave.Enter( playerGameObject, entranceIdentifier );
