@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseHandler : MonoBehaviour
 {
-    private float initialFixedTime;
+    //private float initialFixedTime;
 
     public bool IsPauseInteractionAllowed = true;
     public bool NotifyPauseUI = true;
@@ -20,7 +20,7 @@ public class PauseHandler : MonoBehaviour
 
             //update time scale based on new pause state
             Time.timeScale = isPaused ? 0 : 1;
-            Time.fixedDeltaTime = initialFixedTime * Time.timeScale;
+            //Time.fixedDeltaTime = initialFixedTime * Time.timeScale;
 
             if (NotifyPauseUI)
             {
@@ -35,7 +35,7 @@ public class PauseHandler : MonoBehaviour
 
     private void Awake()
     {
-        initialFixedTime = Time.fixedDeltaTime;
+        //initialFixedTime = Time.fixedDeltaTime;
     }
 
     void OnApplicationFocus(bool hasFocus)
@@ -59,4 +59,9 @@ public class PauseHandler : MonoBehaviour
     {
         IsPaused = false;
     }
+
+    //public float GetInitialFixedTime()
+    //{
+    //    return initialFixedTime;
+    //}
 }
