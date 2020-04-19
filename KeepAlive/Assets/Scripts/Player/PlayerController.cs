@@ -6,16 +6,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D playerRigidbody;
     private Animator playerAnimator;
+    private SpriteRenderer playerSpriteRenderer;
 
     private string previousAnimationTrigger = "Idle";
-    private float originalXScale;
 
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-
-        originalXScale = transform.localScale.x;
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -46,7 +45,7 @@ public class PlayerController : MonoBehaviour
             previousAnimationTrigger = animationTrigger;
             playerAnimator.SetTrigger( previousAnimationTrigger );
 
-            transform.localScale = new Vector3( animationTrigger == "WalkLeft" ? originalXScale : -originalXScale, transform.localScale.y, transform.localScale.z );
+            playerSpriteRenderer.flipX = animationTrigger != "WalkLeft";
         }
     }
 
