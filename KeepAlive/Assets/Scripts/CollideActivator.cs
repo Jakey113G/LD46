@@ -17,7 +17,7 @@ public class CollideActivator : MonoBehaviour
             Debug.Log( "Trigger was consumed by " + playerTagName );
             Destroy( gameObject );
         }
-        else if ( playerGameObject != null && ( autoUse || Input.GetKeyDown( KeyCode.Space ) ) )
+        else if ( playerGameObject != null && ( autoUse || Input.GetButtonDown("Interact") ) )
         {
             Debug.Log( "Trigger was triggered by " + playerTagName );
             Interact( playerGameObject );
