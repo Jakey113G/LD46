@@ -206,6 +206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 8
+  playerSpiteRenderers:
+  - {fileID: 2386964486765599441}
+  - {fileID: 5541809034240772949}
 --- !u!114 &-7142869406185653706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +660,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 101
-  m_Sprite: {fileID: 21300000, guid: 8c86ad7d459b31d47b2e8ae01fe7d67f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf832d70b81020849916b2822b1eb4ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

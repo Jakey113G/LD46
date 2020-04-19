@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,7 +7,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D playerRigidbody;
     private Animator playerAnimator;
-    private SpriteRenderer playerSpriteRenderer;
+
+    [SerializeField] private List<SpriteRenderer> playerSpiteRenderers;
 
     private string previousAnimationTrigger = "Idle";
 
@@ -14,7 +16,6 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
             previousAnimationTrigger = animationTrigger;
             playerAnimator.SetTrigger( previousAnimationTrigger );
 
-            playerSpriteRenderer.flipX = animationTrigger != "WalkLeft";
+            playerSpiteRenderers.ForEach( element => element.flipX = animationTrigger == "WalkRight" );
         }
     }
 
