@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -223, y: 13}
-  m_SizeDelta: {x: 300, y: 50}
+  m_AnchoredPosition: {x: -152.22997, y: -12.24}
+  m_SizeDelta: {x: 450, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &453444176
 MonoBehaviour:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -806,8 +806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -70}
-  m_SizeDelta: {x: 650, y: 300}
+  m_AnchoredPosition: {x: 1.7, y: -70.6}
+  m_SizeDelta: {x: 800, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885836928
 MonoBehaviour:
@@ -821,8 +821,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b950dbf5962934bb91b4b3567ff4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ControllImage: {fileID: 2800000, guid: 47b327f2ac63f9b49a2bf423fd8bd8dd, type: 3}
-  KeyboardImage: {fileID: 2800000, guid: 85d45a026d3fb3d49ba2729fc92c358f, type: 3}
+  ControllerInfo:
+    Image: {fileID: 21300000, guid: 47b327f2ac63f9b49a2bf423fd8bd8dd, type: 3}
+    Description: Use Left Stick To Move\nUse A button to interact
+  KeyboardInfo:
+    Image: {fileID: 21300000, guid: 85d45a026d3fb3d49ba2729fc92c358f, type: 3}
+    Description: Use WASD to Move\nUse Space to Interact
+  objectForDeviceImage: {fileID: 2074726139}
 --- !u!1 &2074726139
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +840,7 @@ GameObject:
   - component: {fileID: 2074726142}
   - component: {fileID: 2074726141}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DeviceImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -850,14 +855,14 @@ RectTransform:
   m_GameObject: {fileID: 2074726139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1885836927}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 172.77, y: -12.24}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074726141
@@ -873,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
