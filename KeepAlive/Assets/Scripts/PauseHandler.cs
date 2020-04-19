@@ -7,6 +7,9 @@ public class PauseHandler : MonoBehaviour
 {
     private float initialFixedTime;
 
+    public bool IsPauseInteractionAllowed = true;
+    public bool NotifyPauseUI = true;
+
     private bool isPaused;
     public bool IsPaused
     {
@@ -19,10 +22,13 @@ public class PauseHandler : MonoBehaviour
             Time.timeScale = isPaused ? 0 : 1;
             Time.fixedDeltaTime = initialFixedTime * Time.timeScale;
 
-            PauseOptions options = GetComponent<PauseOptions>();
-            if (options)
+            if (NotifyPauseUI)
             {
-                options.OnPauseChanged(isPaused);
+                PauseOptions options = GetComponent<PauseOptions>();
+                if (options)
+                {
+                    options.OnPauseChanged(isPaused);
+                }
             }
         }
     }
@@ -34,13 +40,16 @@ public class PauseHandler : MonoBehaviour
 
     void OnApplicationFocus(bool hasFocus)
     {
-        IsPaused = !hasFocus;
+        if (IsPauseInteractionAllowed)
+        {
+            IsPaused = !hasFocus;
+        }
     }
 
     void Update()
     {
         bool pressPause = Input.GetButtonDown("Cancel");
-        if (pressPause)
+        if (pressPause && IsPauseInteractionAllowed)
         {
             IsPaused = !isPaused;
         }
