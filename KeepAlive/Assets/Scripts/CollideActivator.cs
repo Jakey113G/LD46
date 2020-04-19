@@ -6,8 +6,8 @@ public class CollideActivator : MonoBehaviour
 
     public bool autoUse = false;
     public bool canConsume = false;
-    public bool canContinueToExist = true;
-
+    
+    private bool canContinueToExist = true;
     private GameObject playerGameObject;
 
     private void Update()
