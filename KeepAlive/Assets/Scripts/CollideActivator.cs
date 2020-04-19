@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 
-public class CollideActivator : MonoBehaviour
+public abstract class CollideActivator : MonoBehaviour
 {
     public string playerTagName = "Player";
 
     public bool autoUse = false;
     public bool canConsume = false;
-    
+
     private bool canContinueToExist = true;
     private GameObject playerGameObject;
+
+    [SerializeField] private string uiMessage = "Press \"space\" to use";
 
     private void Update()
     {
@@ -17,7 +19,7 @@ public class CollideActivator : MonoBehaviour
             Debug.Log( "Trigger was consumed by " + playerTagName );
             Destroy( gameObject );
         }
-        else if ( playerGameObject != null && ( autoUse || Input.GetKeyDown( KeyCode.Space ) ) )
+        else if ( playerGameObject != null && ( autoUse || Input.GetButtonDown( "Interact" ) ) )
         {
             Debug.Log( "Trigger was triggered by " + playerTagName );
             Interact( playerGameObject );
@@ -30,7 +32,9 @@ public class CollideActivator : MonoBehaviour
         if ( other.CompareTag( playerTagName ) )
         {
             Debug.Log( "Trigger was entered by " + playerTagName );
+
             playerGameObject = other.gameObject;
+            CollideActivatorUI.CollideActivatorUiInstance.Show( uiMessage );
         }
     }
 
@@ -39,7 +43,9 @@ public class CollideActivator : MonoBehaviour
         if ( other.CompareTag( playerTagName ) )
         {
             Debug.Log( "Trigger was left by " + playerTagName );
+
             playerGameObject = null;
+            CollideActivatorUI.CollideActivatorUiInstance.Hide();
         }
     }
 
@@ -47,5 +53,5 @@ public class CollideActivator : MonoBehaviour
     /// Actual interaction logic.
     /// </summary>
     /// <returns>T</returns>
-    protected virtual void Interact( GameObject playerGameObject ) { }
+    protected abstract void Interact( GameObject playerGameObject );
 }
