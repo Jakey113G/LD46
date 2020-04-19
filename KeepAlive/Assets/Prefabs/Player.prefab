@@ -230,4 +230,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  baseDeclineRatePerSecond: 25
+  baseDeclineRatePerSecond: 2

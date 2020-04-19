@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class Torch : MonoBehaviour
 {
     public event Action onTorchDeath;
+    public event Action<float> onTorchHealthUpdated;
 
     [SerializeField] private float health = 100;
     [SerializeField] private float baseDeclineRatePerSecond = 1.0f;
@@ -16,8 +17,9 @@ public class Torch : MonoBehaviour
     private void Update()
     {
         float delta = Time.deltaTime * baseDeclineRatePerSecond;
-
+        
         health = Mathf.Max( 0, health - delta );
+        onTorchHealthUpdated?.Invoke(health);
 
         if ( health <= 0 )
         {
@@ -26,7 +28,7 @@ public class Torch : MonoBehaviour
             enabled = false;
             onTorchDeath?.Invoke();
             
-            SceneManager.LoadSceneAsync("GameOverSplash", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("GameOverSplash", LoadSceneMode.Single);
         }
     }
 

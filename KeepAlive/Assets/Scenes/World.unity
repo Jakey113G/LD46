@@ -31825,6 +31825,8 @@ MonoBehaviour:
   UIScenes:
   - SceneName: AdditivePauseMenu
     IsLoaded: 0
+  - SceneName: TorchHealthOverlay
+    IsLoaded: 0
 --- !u!1 &1241709827
 GameObject:
   m_ObjectHideFlags: 0
