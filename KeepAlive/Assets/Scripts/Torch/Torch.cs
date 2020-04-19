@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
  */
 public class Torch : MonoBehaviour
 {
-    public event Action onTorchDeath;
     public event Action<float> onTorchHealthUpdated;
 
     [SerializeField] private float health = 100;
@@ -17,24 +16,22 @@ public class Torch : MonoBehaviour
     private void Update()
     {
         float delta = Time.deltaTime * baseDeclineRatePerSecond;
-        
+
         health = Mathf.Max( 0, health - delta );
-        onTorchHealthUpdated?.Invoke(health);
+        onTorchHealthUpdated?.Invoke( health );
 
         if ( health <= 0 )
         {
             Debug.Log( "torch is dead" );
-
             enabled = false;
-            onTorchDeath?.Invoke();
-            
-            SceneManager.LoadSceneAsync("GameOverSplash", LoadSceneMode.Single);
+
+            SceneManager.LoadSceneAsync( "GameOverSplash", LoadSceneMode.Single );
         }
     }
 
     public void Kindle( float amount )
     {
-        health += amount;
+        health = Mathf.Min( health + amount, 100 );
 
         Debug.Log( $"torch is kindled by ${amount} for a total of ${health}" );
     }
