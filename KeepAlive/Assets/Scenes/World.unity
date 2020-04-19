@@ -25229,7 +25229,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 608764845}
-  - component: {fileID: 608764844}
   - component: {fileID: 608764846}
   m_Layer: 0
   m_Name: UILoader
@@ -25238,18 +25237,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &608764844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608764843}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db861945deb7fb4abb5fe29dfdf7f68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &608764845
 Transform:
   m_ObjectHideFlags: 0
@@ -25280,6 +25267,8 @@ MonoBehaviour:
   - SceneName: AdditivePauseMenu
     IsLoaded: 0
   - SceneName: TorchHealthOverlay
+    IsLoaded: 0
+  - SceneName: IntroScene
     IsLoaded: 0
 --- !u!1 &1118940776
 GameObject:

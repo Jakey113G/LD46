@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TorchHealthOverlay.unity
     guid: dfd366c75108a614ea150a789e099419
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 55685de3a0e4d554cb642ae6b646047e
   m_configObjects: {}
