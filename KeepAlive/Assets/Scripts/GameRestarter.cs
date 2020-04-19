@@ -29,15 +29,7 @@ public class GameRestarter : MonoBehaviour
 
     void PrepareToRestart()
     {
-        int sceneCount = SceneManager.sceneCount;
-        for(int i = 0; i < sceneCount; ++i)
-        {
-            Scene scene = SceneManager.GetSceneAt(i);
-            SceneManager.UnloadSceneAsync(scene.name, UnloadSceneOptions.None);
-        }
-
-        //unload all scenes and load splash only
-        SceneManager.LoadScene(0);
+        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 
     void Update()

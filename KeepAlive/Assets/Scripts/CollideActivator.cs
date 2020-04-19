@@ -34,7 +34,9 @@ public abstract class CollideActivator : MonoBehaviour
             Debug.Log( "Trigger was entered by " + playerTagName );
 
             playerGameObject = other.gameObject;
-            CollideActivatorUI.CollideActivatorUiInstance.Show( uiMessage );
+
+            TriggerEntered( playerGameObject );
+            PlayerUi.ShowInteractionPopup( uiMessage );
         }
     }
 
@@ -44,8 +46,10 @@ public abstract class CollideActivator : MonoBehaviour
         {
             Debug.Log( "Trigger was left by " + playerTagName );
 
+            TriggerExit( playerGameObject );
+            PlayerUi.HideInteractionPopup();
+
             playerGameObject = null;
-            CollideActivatorUI.CollideActivatorUiInstance.Hide();
         }
     }
 
@@ -54,4 +58,7 @@ public abstract class CollideActivator : MonoBehaviour
     /// </summary>
     /// <returns>T</returns>
     protected abstract void Interact( GameObject playerGameObject );
+
+    protected virtual void TriggerEntered( GameObject playerGameObject ) { }
+    protected virtual void TriggerExit( GameObject playerGameObject ) { }
 }
