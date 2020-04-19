@@ -1,24 +1,14 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
-using Zenject;
+﻿using UnityEngine;
 
-public class GameManager : IGameManager
+public class GameManager : MonoBehaviour
 {
-    [Inject( Id = "playerPrefab" ), UsedImplicitly]
-    private PlayerController playerPrefab;
-
-    [Inject, UsedImplicitly] private PlayerControllerFactory gameObjectFactory;
-
-    [Inject]
-    private void Inject()
-    {
-        Start();
-    }
+    [SerializeField] private PlayerController playerPrefab;
+    [SerializeField] private Transform playerStart;
 
     public void Start()
     {
         Debug.Log( "game start" );
-        gameObjectFactory.Create( playerPrefab );
+        Instantiate( playerPrefab, playerStart.position, playerStart.rotation );
     }
 
     public void GameOver()
