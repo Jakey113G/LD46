@@ -1,33 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  public float Speed;
+    public float Speed;
 
-  private Rigidbody2D playerRigidbody;
+    private Rigidbody2D playerRigidbody;
 
-  private Vector2 currentVelocity;
+    void Start()
+    {
+        playerRigidbody = GetComponent<Rigidbody2D>();
+    }
 
-  void Start()
-  {
-    playerRigidbody = GetComponent<Rigidbody2D>();
-    currentVelocity = new Vector2(0, 0);
-  }
+    void FixedUpdate()
+    {
+        float moveHorizontal = Input.GetAxis( "Horizontal" );
+        float moveVertical = Input.GetAxis( "Vertical" );
 
-  void FixedUpdate()
-  {
-    float moveHorizontal = Input.GetAxis("Horizontal");
-    float moveVertical = Input.GetAxis("Vertical");
+        Vector2 moveVelocity = new Vector2( moveHorizontal, moveVertical );
 
-    Vector2 moveVelocity = new Vector2(moveHorizontal, moveVertical);
+        if ( moveVelocity.magnitude > 1.0f ) moveVelocity = moveVelocity.normalized;
+        moveVelocity *= Speed;
 
-    if(moveVelocity.magnitude > 1.0f) moveVelocity = moveVelocity.normalized;
-    moveVelocity *= Speed;
+        Vector2 velocityChange = moveVelocity - playerRigidbody.velocity;
 
-    Vector2 velocityChange = moveVelocity - playerRigidbody.velocity;
-
-    playerRigidbody.velocity += velocityChange * 0.8f;
-  }
+        playerRigidbody.velocity += velocityChange * 0.8f;
+    }
 }

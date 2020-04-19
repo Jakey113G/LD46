@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**
  * This is represents the player's torch. When it's health reaches 0 the game is over.
@@ -6,7 +8,7 @@
  */
 public class Torch : MonoBehaviour
 {
-    [SerializeField] private TorchDeathEvent torchDeathEvent;
+    public event Action onTorchDeath;
 
     [SerializeField] private float health = 100;
     [SerializeField] private float baseDeclineRatePerSecond = 1.0f;
@@ -22,7 +24,9 @@ public class Torch : MonoBehaviour
             Debug.Log( "torch is dead" );
 
             enabled = false;
-            torchDeathEvent.onTorchDeath?.Invoke();
+            onTorchDeath?.Invoke();
+            
+            SceneManager.LoadSceneAsync("GameOverSplash", LoadSceneMode.Additive);
         }
     }
 
