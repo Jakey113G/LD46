@@ -18,7 +18,6 @@ public class UILoader : MonoBehaviour
     [SerializeField]
     public MappedSceneLoadState[] UIScenes;
 
-    private bool pauseReadyToInvoke;
     private void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -38,10 +37,5 @@ public class UILoader : MonoBehaviour
                 mappedScene.IsLoaded = true;
             }
         }
-    }
-
-    public bool GetIsPauseUILoaded()
-    {
-        return pauseReadyToInvoke;
     }
 }
