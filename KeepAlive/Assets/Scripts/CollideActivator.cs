@@ -1,24 +1,25 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CollideActivator : MonoBehaviour
 {
     public string playerTagName = "Player";
-    public bool canConsume = false;
-    public bool canContinueToExist = true;
 
-    private GameObject playerGameObject;
+    public bool autoUse = false;
+    public bool canConsume = false;
     
+    private bool canContinueToExist = true;
+    private GameObject playerGameObject;
+
     private void Update()
     {
         if ( canContinueToExist == false && canConsume == true )
         {
-            Debug.Log("Trigger was consumed by " + playerTagName);
+            Debug.Log( "Trigger was consumed by " + playerTagName );
             Destroy( gameObject );
         }
-        else if (playerGameObject != null && Input.GetKeyDown( KeyCode.Space ) )
+        else if ( playerGameObject != null && ( autoUse || Input.GetKeyDown( KeyCode.Space ) ) )
         {
-            Debug.Log("Trigger was triggered by " + playerTagName);
+            Debug.Log( "Trigger was triggered by " + playerTagName );
             Interact( playerGameObject );
             canContinueToExist = false;
         }
