@@ -43,6 +43,12 @@ public class IntroSceneLogic : MonoBehaviour
         {
             elapsedTime += realUpdateTime;
 
+            //Hack - final day. Press interact to skip the wait
+            if(Input.GetButtonDown("Interact"))
+            {
+                elapsedTime = FadeAfterXSeconds;
+            }
+
             if (elapsedTime >= FadeAfterXSeconds)
             {
                 StartCoroutine(Fade());
