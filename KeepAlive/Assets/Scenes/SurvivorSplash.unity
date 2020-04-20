@@ -317,7 +317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Well done, you managed to keep your flame of hope long enough to find sanctuary.
+  m_text: Well done, you managed to keep your fire burning long enough to find sanctuary.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -386,10 +386,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 1.6548157}
   m_textInfo:
     textComponent: {fileID: 1116802271}
-    characterCount: 80
+    characterCount: 79
     spriteCount: 0
-    spaceCount: 14
-    wordCount: 15
+    spaceCount: 13
+    wordCount: 14
     linkCount: 0
     lineCount: 2
     pageCount: 1
