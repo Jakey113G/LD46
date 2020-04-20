@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 34580283243273080}
   - component: {fileID: 3476137624407021743}
   - component: {fileID: 2023715248297212252}
+  - component: {fileID: 5478236257472231250}
   m_Layer: 0
   m_Name: TorchUpgradeTime
   m_TagString: Untagged
@@ -92,8 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 4140303575119414680, guid: d7ed1bbbe97fff091961a6076b6ee8c2,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: c22612bf5674185439bb3a9169d3b51d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.0666667}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.0666667, y: 1.0666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,6 +130,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &5478236257472231250
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025365724660222753}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4a73bc9a17e5384787e18042dbbcbc3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5949914732235092391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,6 +215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sparkles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425132314320643206, guid: 64048bba968b9604cb817c468c362e2e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.3137255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64048bba968b9604cb817c468c362e2e, type: 3}
