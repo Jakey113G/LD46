@@ -24,16 +24,7 @@ public class IntroSceneLogic : MonoBehaviour
         elapsedTime = 0;
         hasFinished = false;
 
-        PauseHandler[] handlers = FindObjectsOfType<PauseHandler>();
-        foreach (PauseHandler pause in handlers)
-        {
-            if (pause)
-            {
-                pause.IsPauseInteractionAllowed = false;
-                pause.NotifyPauseUI = false;
-                pause.IsPaused = true;
-            }
-        }
+        PauseHandler.instance.PauseGameOnly();
     }
 
     // Update is called once per frame
@@ -84,16 +75,7 @@ public class IntroSceneLogic : MonoBehaviour
     {
         if (s.name == "IntroScene")
         {
-            PauseHandler[] handlers = FindObjectsOfType<PauseHandler>();
-            foreach (PauseHandler pause in handlers)
-            {
-                if (pause)
-                {
-                    pause.IsPauseInteractionAllowed = true;
-                    pause.NotifyPauseUI = true;
-                    pause.OnResumeGame();
-                }
-            }
+            PauseHandler.instance.ResumeGameOnly();
         }
     }
 }
