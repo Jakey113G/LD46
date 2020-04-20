@@ -39,7 +39,8 @@ public class Torch : MonoBehaviour
             Debug.Log( "torch is dead" );
             enabled = false;
 
-            SceneManager.LoadSceneAsync( "GameOverSplash", LoadSceneMode.Single );
+            //Scene will handle restart and pause
+            SceneManager.LoadSceneAsync( "GameOverSplash", LoadSceneMode.Additive );
         }
     }
 
