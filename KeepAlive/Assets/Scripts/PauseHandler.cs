@@ -7,8 +7,8 @@ public class PauseHandler : MonoBehaviour
 {
     //private float initialFixedTime;
 
-    public bool IsPauseInteractionAllowed = true;
-    public bool NotifyPauseUI = true;
+    private bool isPauseInteractionAllowed = true;
+    private bool notifyPauseUI = true;
 
     public static PauseHandler instance => FindObjectOfType<PauseHandler>();
 
@@ -24,7 +24,7 @@ public class PauseHandler : MonoBehaviour
             Time.timeScale = isPaused ? 0 : 1;
             //Time.fixedDeltaTime = initialFixedTime * Time.timeScale;
 
-            if (NotifyPauseUI)
+            if (notifyPauseUI)
             {
                 PauseOptions options = GetComponent<PauseOptions>();
                 if (options)
@@ -42,7 +42,7 @@ public class PauseHandler : MonoBehaviour
 
     void OnApplicationFocus(bool hasFocus)
     {
-        if (IsPauseInteractionAllowed)
+        if (isPauseInteractionAllowed)
         {
             IsPaused = !hasFocus;
         }
@@ -51,7 +51,7 @@ public class PauseHandler : MonoBehaviour
     void Update()
     {
         bool pressPause = Input.GetButtonDown("Cancel");
-        if (pressPause && IsPauseInteractionAllowed)
+        if (pressPause && isPauseInteractionAllowed)
         {
             IsPaused = !isPaused;
         }
@@ -59,6 +59,20 @@ public class PauseHandler : MonoBehaviour
 
     public void OnResumeGame()
     {
+        IsPaused = false;
+    }
+
+    public void PauseGameOnly()
+    {
+        isPauseInteractionAllowed = false;
+        notifyPauseUI = false;
+        IsPaused = true;
+    }
+
+    public void ResumeGameOnly()
+    {
+        isPauseInteractionAllowed = true;
+        notifyPauseUI = true;
         IsPaused = false;
     }
 

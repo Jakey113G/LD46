@@ -20,11 +20,10 @@ public class GameRestarter : MonoBehaviour
         PauseHandler[] handlers = FindObjectsOfType<PauseHandler>();
         foreach (PauseHandler pause in handlers)
         {
-            pause.IsPauseInteractionAllowed = false;
-            pause.NotifyPauseUI = false;
-            pause.IsPaused = true;
+            pause.PauseGameOnly(); 
         }
-    
+
+        PlayerUi.HideHUD();
     }
 
     void PrepareToRestart()
@@ -36,7 +35,7 @@ public class GameRestarter : MonoBehaviour
     {
         if (!hasTriggered)
         {
-            elapsedTimer += Time.deltaTime;
+            elapsedTimer += Time.fixedDeltaTime;
             if (elapsedTimer >= RestartAfterXSeconds)
             {
                 hasTriggered = true;

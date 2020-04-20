@@ -3,8 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class Goal : CollideActivator
 {
+    public bool allowInteraction = true;
+
     protected override void Interact( GameObject playerGameObject )
     {
-        SceneManager.LoadSceneAsync( "SurvivorSplash", LoadSceneMode.Single );
+        if (allowInteraction)
+        {
+            //Only allow one-shot
+            allowInteraction = false;
+
+            //Scene will handle restart and pause
+            SceneManager.LoadSceneAsync("SurvivorSplash", LoadSceneMode.Additive);
+        }
     }
 }
