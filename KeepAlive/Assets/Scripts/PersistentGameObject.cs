@@ -4,6 +4,13 @@ public class PersistentGameObject : MonoBehaviour
 {
     private void Awake()
     {
-        DontDestroyOnLoad( this );
+        if ( FindObjectsOfType<PersistentGameObject>().Length == 1 )
+        {
+            DontDestroyOnLoad( this );
+        }
+        else
+        {
+            Destroy( gameObject );
+        }
     }
 }
