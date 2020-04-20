@@ -10,6 +10,8 @@ public class PauseHandler : MonoBehaviour
     public bool IsPauseInteractionAllowed = true;
     public bool NotifyPauseUI = true;
 
+    public static PauseHandler instance => FindObjectOfType<PauseHandler>();
+
     private bool isPaused;
     public bool IsPaused
     {

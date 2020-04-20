@@ -38,11 +38,19 @@ public class PlayerUi : MonoBehaviour
     {
         PlayerUiInstance.lorePopupRoot.SetActive( true );
         PlayerUiInstance.lorePopupText.text = text;
+
+        PauseHandler.instance.IsPauseInteractionAllowed = false;
+        PauseHandler.instance.NotifyPauseUI = false;
+        PauseHandler.instance.IsPaused = true;
     }
 
     public static void HideLorePopup()
     {
         PlayerUiInstance.lorePopupRoot.SetActive( false );
+        
+        PauseHandler.instance.IsPauseInteractionAllowed = true;
+        PauseHandler.instance.NotifyPauseUI = true;
+        PauseHandler.instance.IsPaused = false;
     }
 
     private void Awake()
