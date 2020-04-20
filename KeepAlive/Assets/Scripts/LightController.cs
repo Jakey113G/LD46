@@ -7,6 +7,7 @@ public class LightController : MonoBehaviour
     public AnimationCurve OuterRadiusCurve;
     public AnimationCurve InnerRadiusCurve;
     public AnimationCurve FlickerCurve;
+    public AnimationCurve FlickerWeightCurve;
 
     [SerializeField] private Light2D light2DComponent;
     [SerializeField] private float flickerLife = 2.0f; // seconds
@@ -42,7 +43,18 @@ public class LightController : MonoBehaviour
         {
             light2DComponent.pointLightOuterRadius = OuterRadiusCurve.Evaluate( lightHealthPercentage );
             light2DComponent.pointLightInnerRadius = InnerRadiusCurve.Evaluate( lightHealthPercentage );
-            light2DComponent.intensity = LightIntensityCurve.Evaluate( lightHealthPercentage ) * FlickerCurve.Evaluate( flickerTimer / flickerLife );
+
+            //HACK - The flicker stuff is multiplicative and looks nice and more natural, however it is problematic nearer the start and end of the intensity curve.
+            //so we will add weighting against the flicker
+            {
+                float flickerWeight = FlickerWeightCurve.Evaluate(lightHealthPercentage);
+                flickerWeight = Mathf.Clamp01(flickerWeight);
+
+                //Create multiplier and add additional percentage while will be used to weigh more towards intensity
+                float flickerMultiplier = FlickerCurve.Evaluate(flickerTimer / flickerLife) * flickerWeight;
+                flickerMultiplier += 1.0f - flickerWeight;
+                light2DComponent.intensity = LightIntensityCurve.Evaluate(lightHealthPercentage) * flickerMultiplier;
+            }
         }
     }
 }
